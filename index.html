@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Captación de Agua Pluvial — Zinacantepec</title>
+    <meta name="description" content="Herramienta para estimar captación de agua pluvial, calcular ROI y visualizar zonas en Zinacantepec.">
+    <meta name="keywords" content="agua, captación, Zinacantepec, pluvial, calculadora, sostenibilidad">
+    <meta name="author" content="Haziel, Lain">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b3954">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Captación de Agua Pluvial — Zinacantepec">
+    <meta property="og:description" content="Calcula captación, ROI y explora zonas para captación pluvial en Zinacantepec.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://localhost/captacion/">
+    <meta property="og:image" content="icons/og-image.png">
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <div class="titulo-header">
+                <span class="icono">🌧️</span>
+                <h1>Captaciones de Agua Pluvial</h1>
+            </div>
+
+            <nav id="main-nav" role="navigation" aria-label="Menú principal">
+                <ul>
+                    <li class="li"><a href="#1">💧 Problemas</a></li>
+                    <li class="li"><a href="#2">💡 Soluciones</a></li>
+                    <li class="li"><a href="#3">❓ Preguntas Frecuentes</a></li>
+                    <li class="li"><a href="#4">🏠 Mapa</a></li>
+                    <li class="li"><a href="#5">🧮 Calculadora</a></li>
+                    <li class="li"><a href="#6">📧 Contacto</a></li>
+                </ul>
+            </nav>
+
+            <button class="hamburger" id="hamburger-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+        </div>
+    </header>
+    <main>
+        <section class="sh">
+        <h1>Aprovecha el Poder de la Lluvia</h1>
+        <p>Soluciones sostenibles para la recolección y aprovechamiento del agua de lluvia en tu hogar o negocio.</p>
+        </section>
+        <section id="1">
+            <h1>Problemas</h1>
+            <article class="articlep">
+                <h3>Infraestructura Obsoleta y Fugas</h3>
+                <p>La infraestructura de distribución de agua potable puede ser antigua o estar en mal estado, lo que provoca un alto porcentaje de *pérdidas de agua por fugas* en la red de tuberías.
+                    Esto reduce significativamente el volumen de agua que realmente llega a los usuarios finales, exacerbando la escasez.</p>
+            </article>
+            <article class="articlep">
+                <h3>Gestión Financiera Deficiente</h3>
+                <p>Los organismos operadores de agua (como OAPAS Zinacantepec) a menudo enfrentan altos índices de cartera vencida (adeudos de usuarios).
+                    Esto limita su capacidad financiera para invertir en mantenimiento, reparación de fugas, y nuevos proyectos.</p>
+            </article>
+            <article class="articlep">
+                <h3>Dependencia del Tandeo e Impacto Social</h3>
+                <p>La necesidad de distribuir agua por tandeo (suministro intermitente) en las zonas altas genera problemas de salud pública por el almacenamiento inadecuado y la interrupción de la higiene básica.
+                    Provoca también una alta dependencia del servicio de pipas, lo que incrementa los costos para las familias.</p>
+            </article>
+            <article class="articlep">
+                <h3>Presión Demográfica y Urbanización</h3>
+                <p>El crecimiento de la población (la población total es de $203,792$ habitantes ) y la urbanización desordenada ejercen una presión creciente sobre las fuentes de agua subterránea (acuíferos), lo que puede llevar a su sobreexplotación.</p>
+            </article>
+        </section>
+        
+        <section id="2">
+            <h1>Soluciones</h1>
+            <article class="articlep">
+                <h3>Mejora y Mantenimiento de Infraestructura</h3>
+                <p>Sectorización de Redes: Dividir la red de distribución en sectores pequeños para facilitar la detección y reparación rápida de fugas.
+                    Sustitución de Tuberías: Inversión constante para reemplazar las tuberías antiguas y deterioradas con materiales modernos y duraderos.</p>
+            </article>
+            <article class="articlep">
+                <h3>Eficiencia en el Uso del Agua y Culturas Hídricas</h3>
+                <p>Medición y Tarifas Justas: Instalar medidores funcionales para cobrar el consumo real y desincentivar el desperdicio.
+                    Campañas de Concientización: Promover el uso responsable del agua a nivel residencial, industrial y agrícola.
+                    Rehabilitación de Pozos: Rehabilitar pozos existentes para maximizar la extracción eficiente y legal del recurso, gestionado por OAPAS.</p>
+            </article>
+        </section>
+        <section id="3">
+            <h1> Preguntas Frecuentes</h1>
+            <div class="faq-container">
+                <article class="faq-item">
+                    <img src="img/IMG-20251024-WA0001.jpg" alt="¿El agua de lluvia captada se puede beber?" class="faq-img">
+                    <div class="faq-content">
+                        <h3>¿El agua de lluvia captada se puede beber?</h3>
+                        <p>No directamente. El agua de lluvia que recolectas del techo es excelente para baños, lavar ropa, trapear y regar plantas. Para poder beberla, requiere un sistema de purificación adicional (filtros de sedimentos, carbón activado y desinfección UV o con cloro).</p>
+                    </div>
+                </article>
+                <article class="faq-item">
+                    <img src="img/IMG-20251024-WA0002.jpg" alt="¿Cuánta agua puedo realmente captar?" class="faq-img">
+                    <div class="faq-content">
+                        <h3>¿Cuánta agua puedo realmente captar?</h3>
+                        <p>Depende de tres factores: 1) El área de tu techo, 2) La cantidad de lluvia en tu zona, y 3) El material de tu techo. ¡Nuestra calculadora te da un estimado preciso para que puedas planificar!</p>
+                    </div>
+                </article>
+                <article class="faq-item">
+                    <img src="img/IMG-20251024-WA0003.jpg" alt="¿Qué es el coeficiente del material?" class="faq-img">
+                    <div class="faq-content">
+                        <h3>¿Qué es el "coeficiente del material" en la calculadora?</h3>
+                        <p>Es un valor que mide la eficiencia de tu techo para recolectar agua. Un techo liso (como lámina) tiene un coeficiente alto (ej. 0.95), perdiendo poca agua. Un techo rugoso (como tejas) tiene uno más bajo (ej. 0.85) porque salpica y absorbe un poco más.</p>
+                    </div>
+                </article>
+                <article class="faq-item">
+                    <img src="img/IMG-20251024-WA0004.jpg" alt="¿Qué tamaño de cisterna necesito?" class="faq-img">
+                    <div class="faq-content">
+                        <h3>¿Qué tamaño de cisterna o tanque necesito?</h3>
+                        <p>Depende de tu consumo diario y del tiempo que quieras tener reserva. Un buen punto de partida es calcular cuánta agua gastas en las tareas donde usarás el agua de lluvia (ej. baños y riego) y multiplicarlo por los días que quieres de autonomía (ej. 15-30 días).</p>
+                    </div>
+                </article>
+                <article class="faq-item">
+                    <img src="img/IMG-20251024-WA0005.jpg" alt="¿Qué pasa con la primera lluvia?" class="faq-img">
+                    <div class="faq-content">
+                        <h3>¿Qué pasa con la primera lluvia después de meses de sequía?</h3>
+                        <p>Esa primera lluvia es la que "lava" el techo de polvo y heces de pájaros. Para eso existen los separadores de primeras lluvias, que desvían automáticamente esos primeros litros de agua sucia para que no entren a tu cisterna principal.</p>
+                    </div>
+                </article>
+                <article class="faq-item">
+                    <img src="img/IMG-20251024-WA0006.jpg" alt="¿Funciona en temporada de secas?" class="faq-img">
+                    <div class="faq-content">
+                        <h3>¿El sistema de captación funciona en temporada de secas?</h3>
+                        <p>No, el sistema solo recolecta agua cuando llueve. Su propósito es almacenar el excedente de agua de la temporada de lluvias para que puedas usarlo durante la temporada de secas. Por eso, un buen almacenamiento es clave.</p>
+                    </div>
+                </article>
+                <article class="faq-item">
+                    <img src="img/IMG-20251024-WA0007.jpg" alt="¿El mantenimiento es complicado?" class="faq-img">
+                    <div class="faq-content">
+                        <h3>¿El mantenimiento es complicado o costoso?</h3>
+                        <p>No. La mayoría del mantenimiento es preventivo y lo puedes hacer tú mismo, como la limpieza de canaletas y filtros. Es mucho más económico que pagar pipas de agua.</p>
+                    </div>
+                </article>
+                <article class="faq-item">
+                    <img src="img/img8.jpg" alt="¿Sirve para regar el huerto?" class="faq-img">
+                    <div class="faq-content">
+                        <h3>¿Puedo usar esta agua para regar mi huerto o jardín?</h3>
+                        <p>¡Absolutamente! El agua de lluvia es la mejor opción para las plantas, ya que es "suave" (baja en sales y minerales duros) y no contiene el cloro del agua potable de la red.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section id="4">
+            <h1>Mapa de Zinacantepec</h1>
+            <h1>🌧️ Mapa de Captación de Agua - Zinacantepec</h1>
+            <div id="map" class="map-container" aria-label="Mapa de captación"></div>
+
+            <!-- Panel de información de zona (se mostrará al hacer click en una zona) -->
+            <aside id="zone-info" class="zone-info" role="region" aria-live="polite" aria-hidden="true">
+                <button id="zone-info-close" class="zone-info-close" aria-label="Cerrar información">✕</button>
+                <div id="zone-info-content"></div>
+            </aside>
+        </section>
+        <section id="5">
+            <div class="calculator-container">
+                <h2>Calculadora de Agua Pluvial 💧</h2>
+                <div class="input-group">
+                    <label for="area">Área de captación (m²):</label>
+                    <input type="number" id="area" placeholder="Ej: 100">
+                </div>
+                <div class="input-group">
+                    <label for="precipitacion">Precipitación (mm):</label>
+                    <input type="number" id="precipitacion" placeholder="Ej: 15">
+                </div>
+                <div class="input-group">
+                    <label for="coeficiente">Coeficiente del material:</label>
+                    <input type="number" id="coeficiente" value="0.85" step="0.01" placeholder="Ej: 0.85 para tejas">
+                </div>
+                <button onclick="calcularAgua()">Calcular Litros</button>
+                <div id="resultado">
+                    <p>Litros a recolectar: <span>0 L</span></p>
+                </div>
+            </div>
+        </section>
+        <section id="6">
+            <h1>Contacto</h1>
+            <form id="contacto-form" class="contact-form" autocomplete="off">
+                <div class="input-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="comentario">Comentario o queja:</label>
+                    <textarea id="comentario" name="comentario" rows="4" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="mensaje-enviado" style="display:none; margin-top:1rem; color:green; font-weight:bold;">
+                ¡Tu mensaje ha sido enviado!
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Soluciones Pluviales. Todos los derechos reservados.</p>
+    </footer>
+    <script src="js/calculadora.js"></script>
+    <script src="js/formulario.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/mapa.js"></script>
+</body>
+</html>
